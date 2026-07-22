@@ -54,7 +54,7 @@
 name: borrar-ramas
 description: Borra ramas locales y remotas de PRs ya mergueados del repositorio
 disable-model-invocation: true
-allowed-tools: Bash(gh *)
+allowed-tools: Bash(gh *) Bash(git *)
 ---
 
 # Contexto
@@ -70,7 +70,7 @@ allowed-tools: Bash(gh *)
 
 # Restricciones
 - No borrar ramas `default`, `base`, `protected`, `current`
-- Borrar solo ramas asociadas a PRs con estatus `merged` existentes
+- Borrar solo ramas origen (`head`) de Pull Requests existentes con estado `merged`
 - El borrado debe ser seguro y no forzado
 ```
 
@@ -81,9 +81,9 @@ allowed-tools: Bash(gh *)
 *Skill creada:* `borrar-ramas` Borra ramas locales y remotas de PRs ya mergueados del repositorio
 
 *Decisiones de diseño tomadas:*
-- Decisión 1: elegir la funcionalidad, repetidamente hacia esto y desde cuando ya queria automatizar esto
-- Decisión 2: decidir que instrucciones
-- Decisión 3: decidir la secuencia de las instrucciones
+- Decisión 1: elegir la funcionalidad, repetidamente borraba las ramas manualmente y deseo automatizar esta actividad
+- Decisión 2: decidir que instrucciones debo poner en el SKILL.md. Decidi borrar primero y luego mostrar lo borrado
+- Decisión 3: decidir la secuencia de las instrucciones en el SKILL.md. Decidi borrar primero las remotas y enseguida las locales
 
 *Qué me resultó fácil:*
 - escoger la funcionalidad
