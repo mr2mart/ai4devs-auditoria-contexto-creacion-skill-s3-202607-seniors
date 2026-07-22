@@ -1,7 +1,7 @@
 # Entregable · Sesión 3 — Copilotos IA
 
-- **Nombre / usuario: Ruben Martinez Tapia
-- **Fecha de entrega: 19-julio-2026
+- **Nombre / usuario:** Ruben Martinez Tapia
+- **Fecha de entrega:** 19-julio-2026
 - **Repo auditado en la Parte A** "front Gatsby, Proyecto de logistica"
 
 ---
@@ -12,9 +12,35 @@
 > Redáctalas para que otra persona las entienda sin contexto adicional. **Sin código propietario ni secretos.**
 
 1. No es preciso en las versiones de las dependencias que maneja el proyecto
+- Gatsby 5.14.1, React 18.2.0, Material UI (MUI) v7.0.2, Redux Toolkit 2.8.2, react-hook-form v7.55.0, ESLint v7.32.0, Tailwind CSS v4.1.3
+
 2. No lista los componentes dentro de components
+── components/          # Componentes de UI reutilizables (wrappers MUI, inputs, tablas)
+│   ├── button/          # Botón personalizado con efecto ripple
+│   ├── customDatePicker/
+│   ├── customSelect/    # Wrapper de Select MUI integrado con react-hook-form
+│   ├── genericTable/    # Tabla genérica con paginación
+│   ├── googleMapComponent/
+│   ├── inputError/      # Muestra mensajes de error de validación de formulario
+│   ├── modalComponent/  # Modales de asignación (ModalAgency, ModalCustomer, etc.)
+
 3. No lista las paginas dentro de pageSections
+├── pageSections/        # Secciones de página / vistas de funcionalidad
+│   ├── login/
+│   ├── users/
+│   ├── unitsReport/
+│   ├── unitsReportDetail/
+│   ├── travelsAssignment/
+│   ├── appointmentsAssignment/
+│   ├── deliverysMonitoring/
+│   ├── travelList/
+│   ├── travels/
+│   ├── travelListCarrier/
+│   ├── appointmentListCarrier/
+
 4. No menciona en la estructura a styles/global.sass
+├── styles/              # Estilos globales SASS
+│   └── global.sass
 
 ---
 
@@ -41,6 +67,11 @@ allowed-tools: Bash(gh *)
 - Mostrar las ramas remotas y locales borradas
 - En caso de no haber ramas remotas borradas mostrar el mensaje `No hay ramas remotas para borrar`
 - En caso de no haber ramas locales borradas mostrar el mensaje `No hay ramas locales para borrar`
+
+# Restricciones
+- No borrar ramas `default`, `base`, `protected`, `current`
+- Borrar solo ramas asociadas a PRs con estatus `merged` existentes
+- El borrado debe ser seguro y no forzado
 ```
 
 ---
@@ -79,7 +110,7 @@ allowed-tools: Bash(gh *)
     - No exclui a las ramas base
 
 - Salida
-```
+``` Markdown
 Ramas remotas borradas
 chore/npm-legacy-peer-deps
 docs/yarn-install
